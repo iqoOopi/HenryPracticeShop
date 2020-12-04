@@ -2,18 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
-        <nav className="nav-wrapper">
-            <div className="container">
-                <Link to="/" className="brand-logo">Shopping</Link>
+        <div>
+            <nav className="nav-wrapper">
+                <div className="container">
+                    <Link to="/" className="brand-logo ">Henry's Shop</Link>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
+                        <li><Link to="/">Shop</Link></li>
+                        <li><Link to="/cart"><i className="material-icons left shoppingCartIcon">shopping_cart</i>Cart</Link></li>
+                    </ul>
+                </div>
+            </nav>
 
-                <ul className="right">
-                    <li><Link to="/">Shop</Link></li>
-                    <li><Link to="/cart">My cart</Link></li>
-                    <li><Link to="/cart"><i className="material-icons">shopping_cart</i></Link></li>
-                </ul>
-            </div>
-        </nav>
-
+            <ul className="sidenav" id="mobile-demo">
+                <li className="sidenav-close"><Link to="/">Shop</Link></li>
+                <li className="sidenav-close"><Link to="/cart">My cart</Link></li>
+            </ul>
+        </div>
 
     )
 }
