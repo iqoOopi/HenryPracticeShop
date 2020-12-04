@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchAllProducts, addToCart } from '../actions'
-import ItemCard from './itemCard'
-import { SearchBar } from './searchBar'
+import ItemCard from './ItemCard'
+import { SearchBar } from './SearchBar'
 
 class Home extends Component {
     state = {
         searchValue: ""
     }
-
 
     componentDidMount() {
         this.props.fetchAllProducts();
