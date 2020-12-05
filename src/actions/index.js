@@ -16,12 +16,13 @@ export const fetchAllProducts = () => {
 export const postCheckout = () => {
     return async (dispatch, getState) => {
         const {cart} = getState();
-        const response = await checkout(cart);
-        console.log(response.data);
-        dispatch({
-            type: 'test',
-            payload: cart
-        })
+        try{
+            const response = await checkout(cart);
+            alert (response.data);
+        } catch (err) {
+            alert(err.response.data);
+        }
+        
     }
 }
 

@@ -70,7 +70,7 @@ class Cart extends Component {
                         <li className="collection-item"><b>Total: {_.sumBy(this.props.cart, e => e.price * e.qty)} $</b></li>
                     </div>
                     <div className="checkout">
-                        <button className="waves-effect waves-light btn" onClick={() => { this.handleCheckout() }}>Checkout</button>
+                        <button className="waves-effect waves-light btn" disabled = {!this.props.cart.length} onClick={() => { this.handleCheckout() }}>Checkout</button>
                     </div>
                 </div>
             </div>

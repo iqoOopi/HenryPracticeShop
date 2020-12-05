@@ -1,5 +1,3 @@
-'use strict';
-
 const express = require('express');
 const app = express();
 const jwt = require('jsonwebtoken');
@@ -7,6 +5,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const data = require('./data');
 const middleware = require('./middleware');
+
+const {verifyCart} = require('./serverHelper');
 
 app.use(express.static(__dirname +'/public'));
 console.log(__dirname)
@@ -19,9 +19,9 @@ app.get('/api/products', (req, res) => {
 });
 
 app.post('/api/checkout', (req, res) => {
-  //TODO: verify cart Item
-
-  return res.json(req.body.cart);
+  const cart = req.body.cart;
+  const checkCart = verifyCart(cart,data.products);
+  return checkCart? res.status(200).send('Enough Stock, Proceed to pay'):res.status(801).send("Not enough Stock, please edit Cart");
 });
 
 app.post('/api/auth', (req,res) => {
