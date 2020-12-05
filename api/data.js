@@ -1,5 +1,6 @@
 
-const serverUrl = 'http://localhost:8081'
+const {Configure:{serverUrl}} = require('./configure');
+
 const products = [
   {
     id: 01,
@@ -42,12 +43,14 @@ const products = [
 
 const users = [
     {
-      'name': 'henry',
-      'password': 'henry'
+      name: 'henry',
+      password: 'henry',
+      balance: 999999999
     },
     {
-      'name': 'admin',
-      'password': 'admin'
+      name: 'admin',
+      password: 'admin',
+      balance: 10
     }
 ];
 

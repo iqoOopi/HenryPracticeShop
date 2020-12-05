@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchAllProducts, addToCart, fetchSearchProducts } from '../actions'
+import { fetchAllProducts, addToCart } from '../actions'
 import ItemCard from './ItemCard'
-import { SearchBar } from './SearchBar'
+import SearchBar from './SearchBar'
 
 class Home extends Component {
     componentDidMount() {
@@ -11,10 +11,6 @@ class Home extends Component {
 
     handleClick = (id) => {
         this.props.addToCart(id);
-    }
-
-    handleSearchResults = (searchValue) => {
-        this.props.fetchSearchProducts(searchValue);
     }
 
     render() {
@@ -26,9 +22,7 @@ class Home extends Component {
 
         return (
             <div className="container">
-                <SearchBar
-                    handleSearchResults={this.handleSearchResults}
-                />
+                <SearchBar />
 
                 <h3 className="center">Products</h3>
                 <div className="row center">
@@ -44,11 +38,9 @@ const mapStateToProps = (state) => {
     }
 }
 const mapDispatchToProps = (dispatch) => {
-
     return {
         addToCart: (id) => dispatch(addToCart(id)),
-        fetchAllProducts: () => dispatch(fetchAllProducts()),
-        fetchSearchProducts: (searchValue) => dispatch(fetchSearchProducts(searchValue))
+        fetchAllProducts: () => dispatch(fetchAllProducts())
     }
 }
 

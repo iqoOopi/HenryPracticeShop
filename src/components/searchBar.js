@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { fetchAllProducts, fetchSearchProducts } from '../actions'
 
-export class SearchBar extends Component {
+class SearchBar extends Component {
     constructor(props) {
         super(props);
         this.searchValue = React.createRef();
@@ -9,12 +11,12 @@ export class SearchBar extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const searchValue = this.searchValue.current.value.toLowerCase();
-        this.props.handleSearchResults(searchValue)
+        this.props.fetchSearchProducts(searchValue);
     }
 
     handleCancel = () => {
-        this.searchValue.current.value='';
-        this.props.handleSearchResults("")
+        this.searchValue.current.value = '';
+        this.props.fetchAllProducts();
     }
 
     render() {
@@ -24,12 +26,15 @@ export class SearchBar extends Component {
                     <div className="input-field">
                         <input id="search" type="search" ref={this.searchValue} />
                         <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-                        <i className="material-icons" onClick = {this.handleCancel}>close</i>
+                        <i className="material-icons" onClick={this.handleCancel}>close</i>
                     </div>
                 </form>
             </div>
         )
     }
-
-
 }
+
+export default connect(
+    null,
+    { fetchAllProducts, fetchSearchProducts }
+)(SearchBar)

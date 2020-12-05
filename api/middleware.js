@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-
-const JWT_SECRET = "jwt_secret_password";
+const {Configure} = require('./configure');
+const JWT_SECRET = Configure.tokenSecret;
 
 module.exports = (req, res, next) => {
 
     // check header or url parameters or post parameters for token
-    var token = req.body['x-access-token'] || req.query['x-access-token'] || req.headers['x-access-token'];
+    var token = req.body['token'] || req.query['token'] || req.headers['token'];
 
     // decode token
     if (token) {
