@@ -36,7 +36,7 @@ class Home extends Component {
                     handleSearchResults={this.handleSearchResults}
                 />
 
-                <h3 className="center">Our items</h3>
+                <h3 className="center">Products</h3>
                 <div className="row center">
                     {productsList}
                 </div>

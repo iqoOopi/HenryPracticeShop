@@ -1,5 +1,5 @@
 import { ActionTypes } from './types'
-import { getProducts } from '../repository';
+import { getProducts, checkout } from '../repository';
 const _ = require('lodash');
 
 export const fetchAllProducts = () => {
@@ -9,6 +9,18 @@ export const fetchAllProducts = () => {
         dispatch({
             type: ActionTypes.FETCH_PRODUCTS,
             payload: response.data
+        })
+    }
+}
+
+export const postCheckout = () => {
+    return async (dispatch, getState) => {
+        const {cart} = getState();
+        const response = await checkout(cart);
+        console.log(response.data);
+        dispatch({
+            type: 'test',
+            payload: cart
         })
     }
 }
@@ -87,4 +99,5 @@ export const subtractQuantity = (id) => {
         })
     }
 }
+
 

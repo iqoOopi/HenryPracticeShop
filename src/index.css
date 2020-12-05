@@ -30,3 +30,12 @@
 .item-desc{
     align-self:center;
 }
+
+.searchBar{
+    padding: 0.5px;
+    margin-top: 20px
+}
+
+.searchBar .input-field{
+    margin:10px
+}

@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'http://localhost:8081';
 
 export function getProducts() {
 	const response = axios.get(`${BASE_URL}/api/products`);
 	return response;
 }
 
-export function getCartProducts(cart) {
-	const response = axios.post(`${BASE_URL}/api/products`, { cart });
+export function checkout(cart) {
+	const response = axios.post(`${BASE_URL}/api/checkout`, { cart });
 	return response;
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { removeItem, addQuantity, subtractQuantity } from '../actions'
+import { removeItem, addQuantity, subtractQuantity, postCheckout } from '../actions'
 const _ = require('lodash');
 
 class Cart extends Component {
@@ -18,6 +18,11 @@ class Cart extends Component {
     handleSubtractQuantity = (id) => {
         this.props.subtractQuantity(id);
     }
+
+    handleCheckout = () =>{
+        this.props.checkout();
+    }
+
     render() {
         const prodsInCart = this.props.cart.length ?
             (
@@ -65,7 +70,7 @@ class Cart extends Component {
                         <li className="collection-item"><b>Total: {_.sumBy(this.props.cart, e => e.price * e.qty)} $</b></li>
                     </div>
                     <div className="checkout">
-                        <button className="waves-effect waves-light btn">Checkout</button>
+                        <button className="waves-effect waves-light btn" onClick={() => { this.handleCheckout() }}>Checkout</button>
                     </div>
                 </div>
             </div>
@@ -84,7 +89,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         removeItem: (id) => dispatch(removeItem(id)),
         addQuantity: (id) => dispatch(addQuantity(id)),
-        subtractQuantity: (id) => dispatch(subtractQuantity(id))
+        subtractQuantity: (id) => dispatch(subtractQuantity(id)),
+        checkout: () => dispatch(postCheckout())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

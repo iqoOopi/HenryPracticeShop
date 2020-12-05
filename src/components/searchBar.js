@@ -19,7 +19,7 @@ export class SearchBar extends Component {
 
     render() {
         return (
-            <div className="container nav-wrapper">
+            <div className="container nav-wrapper z-depth-1 searchBar">
                 <form onSubmit={this.handleSubmit}>
                     <div className="input-field">
                         <input id="search" type="search" ref={this.searchValue} />

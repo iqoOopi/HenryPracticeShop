@@ -18,18 +18,10 @@ app.get('/api/products', (req, res) => {
   return res.json(data.products);
 });
 
-app.post('/api/products', (req, res) => {
-  let products = [], id = null;
-  let cart = JSON.parse(req.body.cart);
-  if (!cart) return res.json(products)
-  for (var i = 0; i < data.products.length; i++) {
-    id = data.products[i].id.toString();
-    if (cart.hasOwnProperty(id)) {
-      data.products[i].qty = cart[id]
-      products.push(data.products[i]);
-    }
-  }
-  return res.json(products);
+app.post('/api/checkout', (req, res) => {
+  //TODO: verify cart Item
+
+  return res.json(req.body.cart);
 });
 
 app.post('/api/auth', (req,res) => {
@@ -50,7 +42,7 @@ app.post('/api/auth', (req,res) => {
   }
 });
 
-const PORT = 5000;
+const PORT = 8081;
 
 app.listen(PORT);
 console.log('api runnging on port ' + PORT + ': ');
