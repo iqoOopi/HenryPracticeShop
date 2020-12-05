@@ -7,12 +7,17 @@ export function getProducts() {
 	return response;
 }
 
+export function searchProducts(searchValue) {
+	const response = axios.get(`${BASE_URL}/api/products/search`, { params: {searchValue} });
+	return response;
+}
+
 export function checkout(cart) {
 	const response = axios.post(`${BASE_URL}/api/checkout`, { cart });
 	return response;
 }
 
-export async function login (data) {
+export async function login(data) {
 	try {
 		const response = await axios.post(`${BASE_URL}/api/auth`, { name: data.name, password: data.password });
 		localStorage.setItem('x-access-token', response.data.token);
@@ -23,6 +28,6 @@ export async function login (data) {
 	}
 }
 
-export function isAuthenticated(){
+export function isAuthenticated() {
 	return localStorage.getItem('x-access-token') && localStorage.getItem('x-access-token-expiration') > Date.now()
 }

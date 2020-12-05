@@ -5,6 +5,7 @@ export const cartReducer = (state = [], action) => {
         case ActionTypes.ADD_TO_CART: {
             return [...action.payload]
         }
+
     //INSIDE CART PAGE
         case ActionTypes.REMOVE_ITEM: {
             return [...action.payload]

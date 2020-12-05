@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchAllProducts, addToCart } from '../actions'
+import { fetchAllProducts, addToCart, fetchSearchProducts } from '../actions'
 import ItemCard from './ItemCard'
 import { SearchBar } from './SearchBar'
 
 class Home extends Component {
-    state = {
-        searchValue: ""
-    }
-
     componentDidMount() {
         this.props.fetchAllProducts();
     }
@@ -18,13 +14,11 @@ class Home extends Component {
     }
 
     handleSearchResults = (searchValue) => {
-        this.setState({
-            searchValue
-        })
+        this.props.fetchSearchProducts(searchValue);
     }
 
     render() {
-        const productsList = this.props.products.filter(e => e.name.toLowerCase().includes(this.state.searchValue)).map(item => <ItemCard
+        const productsList = this.props.products.map(item => <ItemCard
             key={item.id}
             item={item}
             handleClick={this.handleClick}
@@ -53,7 +47,8 @@ const mapDispatchToProps = (dispatch) => {
 
     return {
         addToCart: (id) => dispatch(addToCart(id)),
-        fetchAllProducts: () => dispatch(fetchAllProducts())
+        fetchAllProducts: () => dispatch(fetchAllProducts()),
+        fetchSearchProducts: (searchValue) => dispatch(fetchSearchProducts(searchValue))
     }
 }
 
