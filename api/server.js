@@ -28,7 +28,7 @@ app.get('/api/products/search', (req, res) => {
 });
 
 app.get('/api/account', middleware, (req, res) => {
-  const { username } = req.query;
+  const {name:username} = req.decoded; // from MiddleWare
   const result = _.find(data.users, ['name',username]);
   return res.json(result);
 });

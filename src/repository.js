@@ -42,11 +42,9 @@ export async function login(data) {
 		const response = await axios.post(`${BASE_URL}/api/auth`, { name: data.username, password: data.password });
 		const loggedInUser = {
 			token: response.data.token,
-			tokenExpiration: Date.now() + 2 * 60 * 60 * 1000,
-			username: data.username
+			tokenExpiration: Date.now() + 2 * 60 * 60 * 1000
 		}
 		localStorage.setItem('henryStoreInfo', JSON.stringify(loggedInUser));
-		//localStorage.setItem('x-access-token-expiration', Date.now() + 2 * 60 * 60 * 1000);
 		return response.data;
 	} catch (err) {
 		return await Promise.reject('Authentication Failed!');
