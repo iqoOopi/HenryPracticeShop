@@ -37,6 +37,8 @@ npm run api
 ```
 The backend will start on http://localhost:8081
 
+The GraphiQL has been turned on at http://localhost:8081/graphql
+
 ### Start the React App
  Excute the following command: 
 ```bash
