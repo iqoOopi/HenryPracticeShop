@@ -45,7 +45,7 @@ npm start
 The application will start automatically in your browser on http://localhost:3000
 
 ## Things for me to practise in future
-* Implement a Redis db on Server side to verify cart item stock. Maybe move cart to Redis as well for sharing cart among different device
+* Implement a Redis db on Server side to verify cart item stock and solve concurrence request issue (like high volume during blackFriday). Maybe move cart to Redis as well for sharing cart among different device
 * Try mutate data via GraphQL
 * Implement TypeScript.
 * Play with AWS to deploy both frontEnd and Backend.
