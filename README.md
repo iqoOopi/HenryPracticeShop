@@ -1,4 +1,5 @@
-# Henry's practise E-commerce Shop
+![Screenshot](doc/image/docImage.png)
+# Henry's Practise E-commerce Shop
 This simple application is used by Henry to practise coding skill. 
 With React as FrontEnd, Express as Backend Server
 

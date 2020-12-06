@@ -12,6 +12,9 @@
 .collection .collection-item{
     display: flex;
 }
+.collection-item.avatar {
+    padding-left: 10%!important;
+}
 .collection-item.avatar .title {
     font-size: 20px;
     font-weight: 500;
