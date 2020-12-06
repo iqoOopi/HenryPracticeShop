@@ -5,18 +5,25 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const data = require('./data');
 const middleware = require('./middleware');
+const { graphqlHTTP } = require('express-graphql');
+const _ = require('lodash');
 
 const { Configure } = require('./configure');
 const { verifyCart } = require('./serverHelper');
-const _ = require('lodash');
+const {schema} = require('./schema/schema')
 
-console.log(Configure.serverUrl);
 app.use(express.static(__dirname + '/public'));
-console.log(__dirname)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+//new graphql API
+app.use('/graphql', graphqlHTTP({
+  schema: schema,
+  graphiql: true,
+}));
+
+//old rest API
 app.get('/api/products', (req, res) => {
   return res.json(data.products);
 });
@@ -28,8 +35,8 @@ app.get('/api/products/search', (req, res) => {
 });
 
 app.get('/api/account', middleware, (req, res) => {
-  const {name:username} = req.decoded; // from MiddleWare
-  const result = _.find(data.users, ['name',username]);
+  const { name: username } = req.decoded; // from MiddleWare
+  const result = _.find(data.users, ['name', username]);
   return res.json(result);
 });
 

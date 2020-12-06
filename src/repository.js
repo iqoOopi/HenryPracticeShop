@@ -1,15 +1,37 @@
 import axios from 'axios';
-import {Configure} from './configure'
+import { Configure } from './configure'
 
 const BASE_URL = 'http://localhost:8081';
 
 export function getProducts() {
-	const response = axios.get(`${BASE_URL}/api/products`);
+	const response = axios.post( `${BASE_URL}/graphql`,{
+		query: `{
+			products {
+				id,
+				name,
+				price,
+				imgUrl,
+				stock,
+				description
+			}
+		}`
+	})
 	return response;
 }
 
 export function searchProducts(searchValue) {
-	const response = axios.get(`${BASE_URL}/api/products/search`, { params: { searchValue } });
+	const response = axios.post( `${BASE_URL}/graphql`,{
+		query: `{
+			search(searchValue:"${searchValue}") {
+				id,
+				name,
+				price,
+				imgUrl,
+				stock,
+				description
+			}
+		}`
+	})
 	return response;
 }
 

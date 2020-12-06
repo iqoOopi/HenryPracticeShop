@@ -9,7 +9,7 @@ export const fetchAllProducts = () => {
 
         dispatch({
             type: ActionTypes.FETCH_PRODUCTS,
-            payload: response.data
+            payload: response.data.data.products
         })
     }
 }
@@ -20,7 +20,7 @@ export const fetchSearchProducts = (searchValue) => {
 
         dispatch({
             type: ActionTypes.SEARCH_PRODUCTS,
-            payload: response.data
+            payload: response.data.data.search
         })
     }
 }
