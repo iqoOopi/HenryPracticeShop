@@ -18,7 +18,7 @@ const ItemCard = ({ item, addToCart }) => {
 
                 <div className="card-content">
                     <p>{item.description}</p>
-                    <p><b>Price: {item.price}$</b></p>
+                    <p><b>Price: ${item.price}</b></p>
                     <p><b>Stock: {item.stock}</b></p>
                 </div>
             </div>

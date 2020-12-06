@@ -1,15 +1,21 @@
-# Basic e-commerce cart application built with React & Redux
+# Henry's practise E-commerce Shop
+This simple application is used by Henry to practise coding skill. 
+With React as FrontEnd, Express as Backend Server
 
-This simple application prototype shows how we can use React and Redux to build a friendly user experience with instant visual updates.
-
-## Demo
-[Here](https://my-shopping-cart-leawwzhsmf.now.sh/)
+## Key Library
+* React + Redux to build FrontEnd and Cart.
+* Materialize Css to handle style and responsive design https://materializecss.com/
+* React-Route to route between different page.
+* redux-persist to prevent losing cart after refresh page, redux-thunk and axio to make api call. 
+* Express to build a simple backend with json data.
+* jsonwebtoken to generate token for authentication.
 
 ## Features
-* Add and remove items 
-* Remove items
-* Edit the quantity of the items in real time
-* Calculate automatically the total including the shipping (if chosen)
+* Add products to cart
+* Search products from server
+* Complete Cart function, add/remove item and checkout
+* Login Feature to access protected Account Page
+* Responsive Design
 
 # Getting started
 ### Requirements
@@ -19,11 +25,24 @@ This simple application prototype shows how we can use React and Redux to build 
 
 ### Package installation
 ```bash
+npm install -g nodemon
 npm install
 ```
- ### Start the React App
+
+### Start the Express Backend
+```bash
+npm run api
+```
+The backend will start on http://localhost:8081
+
+### Start the React App
  Excute the following command: 
 ```bash
 npm start
 ```
 The application will start automatically in your browser on http://localhost:3000
+
+## Things for me to practise in future
+* Implement a Redis db on Server side to verify cart item stock. 
+* Implement GraphQL with a simple MongoDB on server side.
+* Implement TypeScript 
