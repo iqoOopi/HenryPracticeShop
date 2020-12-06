@@ -1,6 +1,6 @@
 ![Screenshot](doc/image/docImage.png)
 # Henry's Practise E-commerce Shop
-This simple application is used by Henry to practise coding skill. 
+This simple application is used by Henry to practice coding skills. 
 With React as FrontEnd, Express as Backend Server
 
 ## Key Library
