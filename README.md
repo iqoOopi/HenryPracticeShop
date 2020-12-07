@@ -48,14 +48,15 @@ npm start
 The application will start automatically in your browser on http://localhost:3000
 
 ## Things for me to practise in future
-* automate test
+* Automate test
 * Implement a Redis db on Server side to verify cart item stock and solve concurrence request issue (like high volume during blackFriday and prevent oversold stock). Maybe move cart to Redis as well for sharing cart among different device
 * Try mutate data via GraphQL
+* More fun with node-sass to have a button switch theme
 * Implement TypeScript.
 * Play with AWS to deploy both frontEnd and Backend.
 
 
-## List of Node Packages Used As Dec 05 2020
+## List of Node Packages Used As Dec 06 2020
 * "axios": "^0.21.0",
 * "body-parser": "^1.19.0",
 * "cors": "^2.8.5",
