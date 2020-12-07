@@ -1,16 +1,16 @@
 ![Screenshot](doc/image/docImage.png)
 # Henry's Practice E-commerce Shop
-This simple application is used by Henry to practice coding skills. 
-It use React as FrontEnd, Express with GraphQL as Backend Server
-Any suggestions are welcome and appreciated!
+This application is used to practice coding skills. 
+React as FrontEnd, Express with GraphQL as Backend Server.
+Any comments and suggestions will be appreciated.
 
 ## Key Library
 * React + Redux to build FrontEnd and Cart.
-* node-sass and Materialize sass to handle theme style and responsive design https://materializecss.com/
+* Node-sass and Materialize sass to handle theme style and responsive design https://materializecss.com/
 * React-Route to route between different page.
-* redux-persist to prevent losing cart after refresh page, redux-thunk and axio to make api call. 
+* Redux-persist to prevent losing cart after refresh page, redux-thunk and axio to make api call. 
 * Express + GraphQL to build a simple backend with json data.
-* jsonwebtoken to generate token for authentication.
+* Jsonwebtoken to generate token for authentication.
 
 ## Features
 * Add products to cart
