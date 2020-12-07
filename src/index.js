@@ -4,7 +4,8 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
 
 import App from './App';
-import './index.css'
+import './materialize-theme.css'
+import './index.css';
 import createConfiguredStore from './configureStore'
 
 const { store, persistor } = createConfiguredStore();

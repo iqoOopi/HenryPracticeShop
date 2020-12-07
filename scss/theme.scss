@@ -1,0 +1,9 @@
+//uncommon the following and run 
+//npx node-sass ./scss/theme.scss ./src/materialize-theme.css
+
+
+// $primary-color: lighten(#7986cb, 5) !default;
+// .btn {
+//     @extend .blue, .lighten-4;
+// }
+@import "./materialize.scss"

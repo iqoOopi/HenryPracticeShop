@@ -6,7 +6,7 @@ Any suggestions are welcome and appreciated!
 
 ## Key Library
 * React + Redux to build FrontEnd and Cart.
-* Materialize Css to handle style and responsive design https://materializecss.com/
+* node-sass and Materialize sass to handle theme style and responsive design https://materializecss.com/
 * React-Route to route between different page.
 * redux-persist to prevent losing cart after refresh page, redux-thunk and axio to make api call. 
 * Express + GraphQL to build a simple backend with json data.
@@ -18,6 +18,7 @@ Any suggestions are welcome and appreciated!
 * Complete Cart function, add/remove item and checkout
 * Login Feature to access protected Account Page
 * Responsive Design
+* Easy theme change via scss/theme.scss
 
 # Getting started
 ### Requirements
@@ -63,6 +64,7 @@ The application will start automatically in your browser on http://localhost:300
 * "graphql": "^15.4.0",
 * "jsonwebtoken": "^8.5.1",
 * "lodash": "^4.17.20",
+* "node-sass": "^5.0.0",
 * "react": "^16.14.0",
 * "react-dom": "^16.14.0",
 * "react-redux": "^6.0.1",

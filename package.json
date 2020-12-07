@@ -11,6 +11,7 @@
     "graphql": "^15.4.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
+    "node-sass": "^5.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-redux": "^6.0.1",
@@ -21,6 +22,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "prestart": "node-sass ./scss/theme.scss ./src/materialize-theme.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

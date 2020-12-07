@@ -47,7 +47,7 @@ class Cart extends Component {
                                 <p>
                                     <b>Item Subtotal: $ {item.price * item.qty}</b>
                                 </p>
-                                <button className="waves-effect waves-light btn pink remove" onClick={() => { this.handleRemove(item.id) }}>Remove</button>
+                                <button className="waves-effect waves-light btn remove red" onClick={() => { this.handleRemove(item.id) }}>Remove</button>
                             </div>
                         </li>
                     )
