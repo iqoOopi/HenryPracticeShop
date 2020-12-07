@@ -1,5 +1,5 @@
 ![Screenshot](doc/image/docImage.png)
-# Henry's Practise E-commerce Shop
+# Henry's Practice E-commerce Shop
 This simple application is used by Henry to practice coding skills. 
 It use React as FrontEnd, Express with GraphQL as Backend Server
 Any suggestions are welcome and appreciated!
