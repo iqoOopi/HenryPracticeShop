@@ -1,5 +1,6 @@
 # Trouble Shoot
 IF you have issue starting up the app, make sure you have "ItemCard.js" and "SearchBar.js" under components folder. Since I have commits to remove "itemCard.js" and "searchBar.js" file, if you are running windows, windows will delete uppercase "I" and "S" js file as well. Just re-download the code
+#Web and mobile view
 ![Screenshot](doc/image/docImage.png)
 # Henry's Practice E-commerce Shop
 This application is used to practice coding skills. 
