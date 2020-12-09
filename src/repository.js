@@ -38,13 +38,12 @@ export function searchProducts(searchValue) {
 export async function getUserAccountInfo() {
 	const henryStoreInfo = localStorage.getItem(Configure.localStorageKey);
 	try {
-		const { token, username } = JSON.parse(henryStoreInfo);
+		const { token } = JSON.parse(henryStoreInfo);
 
 		const result = await axios.get(`${BASE_URL}/api/account`,
 			{
 				params: {
-					token,
-					username
+					token
 				}
 			})
 		return result;
