@@ -1,3 +1,4 @@
+import { store as NotifactionBox } from 'react-notifications-component';
 import { ActionTypes } from './types'
 import { getProducts, searchProducts, checkout } from '../repository';
 const _ = require('lodash');
@@ -42,6 +43,19 @@ export const addToCart = (id) => {
                 qty: 1
             })
         }
+
+        NotifactionBox.addNotification({
+            title: "Added to Cart",
+            message: `${prod.name} X 1 added to cart`,
+            type: "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+              duration: 2000
+            }
+          });
 
         dispatch({
             type: ActionTypes.ADD_TO_CART,
