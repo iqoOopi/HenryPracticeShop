@@ -1,10 +1,8 @@
-# Trouble Shoot
-If you have issue starting up the app, make sure you have "ItemCard.js" and "SearchBar.js" under components folder. Since I have commits to remove "itemCard.js" and "searchBar.js" file, if you are running windows, windows will delete uppercase "I" and "S" js file as well. Just re-download the code
 # Web and mobile view
 ![Screenshot](doc/image/docImage.png)
 # Henry's Practice E-commerce Shop
 This application is used to practice coding skills. 
-React as FrontEnd, Express with GraphQL as Backend Server.
+React as FrontEnd, Express with GraphQL as Backend Server, MongoDB Atlas as Database
 Any comments and suggestions will be appreciated.
 
 ## Key Library
@@ -59,21 +57,23 @@ The application will start automatically in your browser on http://localhost:300
 * Play with AWS to deploy both frontEnd and Backend.
 
 
-## List of Node Packages Used As Dec 06 2020
-* "axios": "^0.21.0",
-* "body-parser": "^1.19.0",
-* "cors": "^2.8.5",
-* "express": "^4.17.1",
-* "express-graphql": "^0.12.0",
-* "graphql": "^15.4.0",
-* "jsonwebtoken": "^8.5.1",
-* "lodash": "^4.17.20",
-* "node-sass": "^5.0.0",
-* "react": "^16.14.0",
-* "react-dom": "^16.14.0",
-* "react-redux": "^6.0.1",
-* "react-router-dom": "^4.3.1",
-* "react-scripts": "2.1.1",
-* "redux": "^4.0.5",
-* "redux-persist": "^6.0.0",
-* "redux-thunk": "^2.3.0"
+## List of Node Packages Used As Dec 13 2020
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.11.7",
+    "node-sass": "^5.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-notifications-component": "^3.0.3",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0"
