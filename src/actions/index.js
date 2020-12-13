@@ -45,11 +45,11 @@ export const addToCart = (id) => (dispatch, getState) => {
         message: `${prod.name} X 1 added to cart`,
         type: "success",
         insert: "top",
-        container: "top-right",
+        container: "top-center",
         animationIn: ["animate__animated", "animate__fadeIn"],
         animationOut: ["animate__animated", "animate__fadeOut"],
         dismiss: {
-            duration: 2000
+            duration: 1000
         }
     });
 
