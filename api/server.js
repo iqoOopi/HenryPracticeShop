@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -7,14 +6,17 @@ const data = require('./data');
 const middleware = require('./middleware');
 const { graphqlHTTP } = require('express-graphql');
 const _ = require('lodash');
+const models = require('./mongoAltas/models');
 const mongoose = require('mongoose');
 
 const { Configure } = require('./configure');
 const { verifyCart } = require('./serverHelper');
-const {schema} = require('./schema/schema')
+const { schema } = require('./schema/schema');
+
+const app = express();
 
 // Replace with your mongoLab URI
-const MONGO_URI = 'mongodb+srv://henryAdmin:AVRnGIcyZus8kmaa@henrystoremongodb.yfgft.mongodb.net/<dbname>?retryWrites=true&w=majority';
+const MONGO_URI = 'mongodb+srv://henryAdmin:AVRnGIcyZus8kmaa@henrystoremongodb.yfgft.mongodb.net/db?retryWrites=true&w=majority';
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
@@ -22,8 +24,8 @@ if (!MONGO_URI) {
 mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URI);
 mongoose.connection
-    .once('open', () => console.log('Connected to MongoLab instance.'))
-    .on('error', error => console.log('Error connecting to MongoLab:', error));
+  .once('open', () => console.log('Connected to MongoLab instance.'))
+  .on('error', error => console.log('Error connecting to MongoLab:', error));
 
 
 

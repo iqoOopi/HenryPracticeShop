@@ -1,0 +1,2 @@
+require('./brand');
+require('./product');

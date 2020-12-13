@@ -1,5 +1,8 @@
 const _ = require('lodash');
+const mongoose = require('mongoose');
 const data = require('../data');
+
+const Product = mongoose.model('product');
 
 const {
     GraphQLSchema,
@@ -19,7 +22,7 @@ const brandType = new GraphQLObjectType({
 })
 
 const ProductType = new GraphQLObjectType({
-    name: "Product",
+    name: "ProductType",
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: GraphQLString },
@@ -27,22 +30,22 @@ const ProductType = new GraphQLObjectType({
         price: { type: GraphQLFloat },
         imgUrl: { type: GraphQLString },
         description: { type: GraphQLString },
-        brand: {
-            type: brandType,
-            resolve(parentValue, args) {
-                return _.find(data.brand, ['id', parentValue.brandId])
-            }
-        }
+        // brand: {
+        //     type: brandType,
+        //     resolve(parentValue, args) {
+        //         return _.find(data.brand, ['id', parentValue.brandId])
+        //     }
+        // }
     })
 })
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
-    fields: {
+    fields: ()=>({
         products: {
-            type: GraphQLList(ProductType),
+            type: new GraphQLList(ProductType),
             resolve() {
-                return data.products
+                return Product.find({})
             }
         },
         product: {
@@ -59,7 +62,7 @@ const RootQuery = new GraphQLObjectType({
                 return _.filter(data.products, e => e.name.toLowerCase().includes(args.searchValue));
             }
         }
-    }
+    })
 })
 
 
